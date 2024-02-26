@@ -26,6 +26,9 @@ Route::middleware('guest')->group(function() {
     Route::post('register', [\App\Http\Controllers\AuthController::class, 'register']);
 });
 
-Route::middleware('auth')->get('/', function () {
-    return view('analytics');
+Route::middleware('auth')->group(function() {
+    Route::middleware('auth')->get('/', function () {
+        return view('analytics');
+    });
+    Route::post('logout', [\App\Http\Controllers\AuthController::class, 'logout']);
 });

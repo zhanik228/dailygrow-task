@@ -12,7 +12,7 @@
 <body style="display: flex; align-items: center; justify-content: center;">
         <form method="POST" class="auth-form">
             @csrf
-            <h1 class="auth-form--title text-neutral-200 fs-500">Login</h1>
+            <h1 class="auth-form--title">Login</h1>
             <div class="auth-form--form-group form-group">
                 <input name="email" placeholder="email" type="email" class="auth-form--input auth-form__name">
                 <input name="password" placeholder="password" type="password" class="auth-form--input auth-form__password">
