@@ -10,17 +10,21 @@
 </head>
 
 <body style="display: flex; align-items: center; justify-content: center;">
-    <form method="POST" class="auth-form">
-        <h1 class="text-neutral-200 fs-500">Login</h1>
-        <div class="auth-form--form-group form-group">
-            <input placeholder="username" type="text" class="auth-form--input auth-form__name">
-            <input placeholder="password" type="password" class="auth-form--input auth-form__password">
-        </div>
-        <button class="auth-form--btn primary-btn bg-accent-400 text-neutral-100">Log In</button>
-        <div class="auth-form--form-group form-group">
-            <p>Does not have an account? <a href="{{ route('register') }}">Sign Up</a></p>
-        </div>
-    </form>
+        <form method="POST" class="auth-form">
+            @csrf
+            <h1 class="auth-form--title text-neutral-200 fs-500">Login</h1>
+            <div class="auth-form--form-group form-group">
+                <input name="email" placeholder="email" type="email" class="auth-form--input auth-form__name">
+                <input name="password" placeholder="password" type="password" class="auth-form--input auth-form__password">
+            </div>
+            <button class="auth-form--btn primary-btn bg-accent-400 text-neutral-100">Log In</button>
+            <div class="auth-form--link-wrapper form-group">
+                <p>Does not have an account? <a href="{{ route('register') }}">Sign Up</a></p>
+            </div>
+            @error('login')
+                <span>Login error</span>
+            @enderror
+        </form>
 </body>
 
 </html>
