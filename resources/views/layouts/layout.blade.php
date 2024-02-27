@@ -65,20 +65,22 @@
                 <nav class="sidebar-menu-nav">
                     <ul class="sidebar-menu-nav__list">
                         <li class="sidebar-menu-nav__item" data-active="active">
-                            <a href="#">Аналитика</a>
+                            <a href="/">Аналитика</a>
                         </li>
                         <li class="sidebar-menu-nav__item">
-                            Клиенты
+                            <a href="#">Клиенты</a>
                         </li>
                         <li class="sidebar-menu-nav__item">
-                            Рассылки
+                            <a href="#">Рассылки</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
     </aside>
-    @yield('content')
+    <main class="main">
+        @yield('content')
+    </main>
 </body>
 
 </html>
